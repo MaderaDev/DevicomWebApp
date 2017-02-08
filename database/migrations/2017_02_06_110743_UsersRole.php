@@ -15,7 +15,7 @@ class UsersRole extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table
-                ->enum('role', ['guest','achat', 'commercial', 'admin'])
+                ->enum('role', ['guest','achat', 'commercial', 'admin', 'ingenieur'])
                 ->default('guest');
         });
     }
