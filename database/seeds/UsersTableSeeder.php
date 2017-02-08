@@ -30,9 +30,16 @@ class UsersTableSeeder extends Seeder
             'password' => $default_password,
             'role'  => 'achat'
         ];
+        $ingenieur =  [
+            'name' => 'Ingenieur',
+            'email' => 'ingenieur@madera.fr',
+            'password' => $default_password,
+            'role'  => 'ingenieur'
+        ];
 
         DB::table('users')->insert($admin);
         DB::table('users')->insert($commercial);
         DB::table('users')->insert($achat);
+        DB::table('users')->insert($ingenieur);
     }
 }
