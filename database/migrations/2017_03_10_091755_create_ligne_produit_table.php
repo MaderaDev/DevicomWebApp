@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UsersRole extends Migration
+class CreateLigneProduitTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class UsersRole extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table
-                ->enum('role', ['guest','achat', 'commercial', 'admin', 'ingenieur'])
-                ->default('guest');
+        Schema::table('ligne_produit', function (Blueprint $table) {
+            //
         });
     }
 
@@ -27,8 +25,8 @@ class UsersRole extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table) {
-            $table->dropColumn('role');
+        Schema::table('ligne_produit', function (Blueprint $table) {
+            //
         });
     }
 }

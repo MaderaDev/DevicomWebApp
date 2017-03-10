@@ -29,6 +29,20 @@ class CreateDevisTable extends Migration
             $table
                 ->enum('status', ['Brouillon','En attente', 'Refusé', 'Accepté', 'En commande', 'En faturation', 'Clôturé'])
                 ->default('Brouillon');
+            $table
+                ->integer('id_utilisateur')
+                ->unsigned();
+            $table
+                ->foreign('id_utilisateur')
+                ->references('id')
+                ->on('users');
+            $table
+                ->integer('id_client')
+                ->unsigned();
+            $table
+                ->foreign('id_client')
+                ->references('id')
+                ->on('client');
         });
     }
 
