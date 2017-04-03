@@ -13,8 +13,26 @@ class CreateComposantFamilleTable extends Migration
      */
     public function up()
     {
-        Schema::table('composant_famille', function (Blueprint $table) {
-            //
+        Schema::create('composant_famille', function (Blueprint $table) {
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->integer('id_famille')
+                ->unsigned();
+/*            $table
+                ->foreign('id_famille')
+                ->references('id')
+                ->on('famille');*/
+            $table
+                ->integer('id_composant')
+                ->unsigned();
+/*            $table
+                ->foreign('id_composant')
+                ->references('id')
+                ->on('composant');*/
         });
     }
 
@@ -25,8 +43,6 @@ class CreateComposantFamilleTable extends Migration
      */
     public function down()
     {
-        Schema::table('composant_famille', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('composant_famille');
     }
 }

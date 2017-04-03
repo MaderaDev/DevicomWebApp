@@ -16,22 +16,28 @@ class CreateClientTable extends Migration
         Schema::create('client', function (Blueprint $table) {
             $table
                 ->integer('id')
+                ->unsigned()
                 ->primary()
-                ->increment();
+                ->increment()
+                ->unique();
             $table
                 ->string('nom', 50);
             $table
                 ->string('prenom', 50);
             $table
-                ->string('adresse', 50);
+                ->string('adresse', 50)
+                ->nullable();
             $table
-                ->int('codepostal', 4);
+                ->int('codepostal', 4)
+                ->nullable();
             $table
-                ->string('ville', 50);
+                ->string('ville', 50)
+                ->nullable();
             $table
                 ->string('email', 50);
             $table
-                ->string('telephone', 50);
+                ->string('telephone', 50)
+                ->nullable();
         });
     }
 

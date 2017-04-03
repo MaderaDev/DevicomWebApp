@@ -14,7 +14,28 @@ class CreateModuleArticleTable extends Migration
     public function up()
     {
         Schema::table('module_article', function (Blueprint $table) {
-            //
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->integer('quantite_article')
+                ->default(1);
+            $table
+                ->integer('id_module')
+                ->unsigned();
+/*            $table
+                ->foreign('id_module')
+                ->references('id')
+                ->on('module');*/
+            $table
+                ->integer('id_article')
+                ->unsigned();
+/*            $table
+                ->foreign('id_article')
+                ->references('id')
+                ->on('article');*/
         });
     }
 
@@ -25,8 +46,6 @@ class CreateModuleArticleTable extends Migration
      */
     public function down()
     {
-        Schema::table('module_article', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('module_article');
     }
 }

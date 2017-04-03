@@ -13,8 +13,26 @@ class CreateDevisModuleTable extends Migration
      */
     public function up()
     {
-        Schema::table('devis_module', function (Blueprint $table) {
-            //
+        Schema::create('devis_module', function (Blueprint $table) {
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->integer('id_devis')
+                ->unsigned();
+/*            $table
+                ->foreign('id_devis')
+                ->references('id')
+                ->on('devis');*/
+            $table
+                ->integer('id_module')
+                ->unsigned();
+/*            $table
+                ->foreign('id_module')
+                ->references('id')
+                ->on('module');*/
         });
     }
 
@@ -25,8 +43,6 @@ class CreateDevisModuleTable extends Migration
      */
     public function down()
     {
-        Schema::table('devis_module', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('devis_module');
     }
 }

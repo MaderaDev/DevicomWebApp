@@ -14,7 +14,28 @@ class CreateModuleComposantTable extends Migration
     public function up()
     {
         Schema::table('module_composant', function (Blueprint $table) {
-            //
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->integer('quantite_composant')
+                ->default(1);
+            $table
+                ->integer('id_composant')
+                ->unsigned();
+/*            $table
+                ->foreign('id_composant')
+                ->references('id')
+                ->on('composant');*/
+            $table
+                ->integer('id_module')
+                ->unsigned();
+/*            $table
+                ->foreign('id_module')
+                ->references('id')
+                ->on('module');*/
         });
     }
 
@@ -25,8 +46,6 @@ class CreateModuleComposantTable extends Migration
      */
     public function down()
     {
-        Schema::table('module_composant', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('module_composant');
     }
 }

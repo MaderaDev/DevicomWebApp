@@ -15,19 +15,24 @@ class CreateReferenceModuleTable extends Migration
     {
         Schema::table('reference_module', function (Blueprint $table) {
             $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
                 ->integer('id_reference')
                 ->unsigned();
-            $table
+/*            $table
                 ->foreign('id_reference')
                 ->references('id')
-                ->on('reference');
+                ->on('reference');*/
             $table
                 ->integer('id_module')
                 ->unsigned();
-            $table
+/*            $table
                 ->foreign('id_module')
                 ->references('id')
-                ->on('module');
+                ->on('module');*/
         });
     }
 

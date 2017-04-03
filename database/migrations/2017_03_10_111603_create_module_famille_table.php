@@ -13,8 +13,26 @@ class CreateModuleFamilleTable extends Migration
      */
     public function up()
     {
-        Schema::table('module_famille', function (Blueprint $table) {
-            //
+        Schema::create('module_famille', function (Blueprint $table) {
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->integer('id_famille')
+                ->unsigned();
+/*            $table
+                ->foreign('id_famille')
+                ->references('id')
+                ->on('famille');*/
+            $table
+                ->integer('id_module')
+                ->unsigned();
+/*            $table
+                ->foreign('id_module')
+                ->references('id')
+                ->on('module');*/
         });
     }
 
@@ -25,8 +43,6 @@ class CreateModuleFamilleTable extends Migration
      */
     public function down()
     {
-        Schema::table('module_famille', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('module_famille');
     }
 }

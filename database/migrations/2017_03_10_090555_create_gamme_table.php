@@ -16,17 +16,28 @@ class CreateGammeTable extends Migration
         Schema::create('gamme', function (Blueprint $table) {
             $table
                 ->integer('id')
+                ->unsigned()
                 ->primary()
-                ->increment();
+                ->increment()
+                ->unique();
             $table
                 ->string('nom', 50);
             $table
-                ->string('description', 255);
+                ->tinyInteger("status")
+                ->default(0);
             $table
-                ->binary('image', 255);
+                ->text('description')
+                ->nullable();
             $table
-                ->integer('id_reference')
+                ->binary('image')
+                ->nullable();
+            $table
+                ->integer('id_ligne_produit')
                 ->unsigned();
+/*            $table
+                ->foreign('id_ligne_produit')
+                ->references('id')
+                ->on('ligne_produit');*/
         });
     }
 
@@ -37,6 +48,6 @@ class CreateGammeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ligne_produit');
+        Schema::dropIfExists('gamme');
     }
 }

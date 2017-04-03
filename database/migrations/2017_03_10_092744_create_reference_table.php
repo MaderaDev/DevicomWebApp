@@ -13,8 +13,23 @@ class CreateReferenceTable extends Migration
      */
     public function up()
     {
-        Schema::table('reference', function (Blueprint $table) {
-            //
+        Schema::create('reference', function (Blueprint $table) {
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->string('nom', 50);
+            $table
+                ->tinyInteger("status")
+                ->default(0);
+            $table
+                ->text('description')
+                ->nullable();
+            $table
+                ->binary('image')
+                ->nullable();
         });
     }
 
@@ -25,8 +40,6 @@ class CreateReferenceTable extends Migration
      */
     public function down()
     {
-        Schema::table('reference', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('reference');
     }
 }

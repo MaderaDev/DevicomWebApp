@@ -13,8 +13,30 @@ class CreateLigneProduitTable extends Migration
      */
     public function up()
     {
-        Schema::table('ligne_produit', function (Blueprint $table) {
-            //
+        Schema::create('ligne_produit', function (Blueprint $table) {
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->string('nom', 50);
+            $table
+                ->tinyInteger("status")
+                ->default(0);
+            $table
+                ->text('description')
+                ->nullable();
+            $table
+                ->binary('image')
+                ->nullable();
+            $table
+                ->integer('id_reference')
+                ->unsigned();
+/*            $table
+                ->foreign('id_reference')
+                ->references('id')
+                ->on('reference');*/
         });
     }
 
@@ -25,8 +47,6 @@ class CreateLigneProduitTable extends Migration
      */
     public function down()
     {
-        Schema::table('ligne_produit', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('ligne_produit');
     }
 }

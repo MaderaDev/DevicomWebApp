@@ -16,12 +16,15 @@ class CreateDevisTable extends Migration
         Schema::create('devis', function (Blueprint $table) {
             $table
                 ->integer('id')
+                ->unsigned()
                 ->primary()
-                ->increment();
+                ->increment()
+                ->unique();
             $table
                 ->string('nom', 50);
             $table
-                ->float('montant');
+                ->float('montant')
+                ->nullable();
             $table
                 ->datetime('date_creation');
             $table
@@ -39,10 +42,10 @@ class CreateDevisTable extends Migration
             $table
                 ->integer('id_client')
                 ->unsigned();
-            $table
+/*            $table
                 ->foreign('id_client')
                 ->references('id')
-                ->on('client');
+                ->on('client');*/
         });
     }
 

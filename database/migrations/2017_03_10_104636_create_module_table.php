@@ -13,8 +13,28 @@ class CreateModuleTable extends Migration
      */
     public function up()
     {
-        Schema::table('module', function (Blueprint $table) {
-            //
+        Schema::create('module', function (Blueprint $table) {
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->string('nom', 50);
+            $table
+                ->string('reference', 50);
+            $table
+                ->float('prix')
+                ->nullable();
+            $table
+                ->tinyInteger("status")
+                ->default(0);
+            $table
+                ->text('description')
+                ->nullable();
+            $table
+                ->binary('image')
+                ->nullable();
         });
     }
 
@@ -25,8 +45,6 @@ class CreateModuleTable extends Migration
      */
     public function down()
     {
-        Schema::table('module', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('module');
     }
 }

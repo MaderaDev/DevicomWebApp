@@ -14,7 +14,28 @@ class CreateComposantArticleTable extends Migration
     public function up()
     {
         Schema::table('composant_article', function (Blueprint $table) {
-            //
+            $table
+                ->integer('id')
+                ->primary()
+                ->increment()
+                ->unique();
+            $table
+                ->integer('quantite_composant')
+                ->default(1);
+            $table
+                ->integer('id_composant')
+                ->unsigned();
+/*            $table
+                ->foreign('id_composant')
+                ->references('id')
+                ->on('composant');*/
+            $table
+                ->integer('id_article')
+                ->unsigned();
+/*            $table
+                ->foreign('id_article')
+                ->references('id')
+                ->on('article');*/
         });
     }
 
@@ -25,8 +46,6 @@ class CreateComposantArticleTable extends Migration
      */
     public function down()
     {
-        Schema::table('composant_article', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('composant_article');
     }
 }
