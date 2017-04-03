@@ -15,10 +15,7 @@ class CreateDevisModuleTable extends Migration
     {
         Schema::create('devis_module', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('id_devis')
                 ->unsigned();

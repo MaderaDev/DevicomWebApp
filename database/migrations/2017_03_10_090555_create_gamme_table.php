@@ -15,11 +15,7 @@ class CreateGammeTable extends Migration
     {
         Schema::create('gamme', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->unsigned()
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->string('nom', 50);
             $table
@@ -31,13 +27,6 @@ class CreateGammeTable extends Migration
             $table
                 ->binary('image')
                 ->nullable();
-            $table
-                ->integer('id_ligne_produit')
-                ->unsigned();
-/*            $table
-                ->foreign('id_ligne_produit')
-                ->references('id')
-                ->on('ligne_produit');*/
         });
     }
 

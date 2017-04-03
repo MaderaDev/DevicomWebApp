@@ -13,40 +13,40 @@ class CreateConstrains extends Migration
      */
     public function up()
     {
-        Schema::update('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
 
-        Schema::update('devis', function (Blueprint $table) {
+        Schema::table('devis', function (Blueprint $table) {
             $table
                 ->foreign('id_client')
                 ->references('id')
                 ->on('client');
         });
 
-        Schema::update('client', function (Blueprint $table) {
+        Schema::table('client', function (Blueprint $table) {
             //
         });
 
-        Schema::update('gamme', function (Blueprint $table) {
+        Schema::table('gamme', function (Blueprint $table) {
+            //
+        });
+
+        Schema::table('ligne_produit', function (Blueprint $table) {
+            $table
+                ->foreign('id_gamme')
+                ->references('id')
+                ->on('gamme');
+        });
+
+        Schema::table('reference', function (Blueprint $table) {
             $table
                 ->foreign('id_ligne_produit')
                 ->references('id')
                 ->on('ligne_produit');
         });
 
-        Schema::update('ligne_produit', function (Blueprint $table) {
-            $table
-                ->foreign('id_reference')
-                ->references('id')
-                ->on('reference');
-        });
-
-        Schema::update('reference', function (Blueprint $table) {
-            //
-        });
-
-        Schema::update('reference_module', function (Blueprint $table) {
+        Schema::table('reference_module', function (Blueprint $table) {
             $table
                 ->foreign('id_reference')
                 ->references('id')
@@ -57,11 +57,11 @@ class CreateConstrains extends Migration
                 ->on('module');
         });
 
-        Schema::update('module', function (Blueprint $table) {
+        Schema::table('module', function (Blueprint $table) {
             //
         });
 
-        Schema::update('devis_module', function (Blueprint $table) {
+        Schema::table('devis_module', function (Blueprint $table) {
             $table
                 ->foreign('id_devis')
                 ->references('id')
@@ -72,7 +72,7 @@ class CreateConstrains extends Migration
                 ->on('module');
         });
 
-        Schema::update('module_famille', function (Blueprint $table) {
+        Schema::table('module_famille', function (Blueprint $table) {
             $table
                 ->foreign('id_famille')
                 ->references('id')
@@ -83,11 +83,11 @@ class CreateConstrains extends Migration
                 ->on('module');
         });
 
-        Schema::update('famille', function (Blueprint $table) {
+        Schema::table('famille', function (Blueprint $table) {
             //
         });
 
-        Schema::update('composant_famille', function (Blueprint $table) {
+        Schema::table('composant_famille', function (Blueprint $table) {
             $table
                 ->foreign('id_famille')
                 ->references('id')
@@ -98,11 +98,11 @@ class CreateConstrains extends Migration
                 ->on('composant');
         });
 
-        Schema::update('composant', function (Blueprint $table) {
+        Schema::table('composant', function (Blueprint $table) {
             //
         });
 
-        Schema::update('composant_composant', function (Blueprint $table) {
+        Schema::table('composant_composant', function (Blueprint $table) {
             $table
                 ->foreign('id_composant')
                 ->references('id')
@@ -113,11 +113,10 @@ class CreateConstrains extends Migration
                 ->on('composant');
         });
 
-        Schema::update('article', function (Blueprint $table) {
+        Schema::table('article', function (Blueprint $table) {
             //
         });
-
-        Schema::update('module_composant', function (Blueprint $table) {
+        Schema::table('module_composant', function (Blueprint $table) {
             $table
                 ->foreign('id_composant')
                 ->references('id')
@@ -128,7 +127,7 @@ class CreateConstrains extends Migration
                 ->on('module');
         });
 
-        Schema::update('composant_article', function (Blueprint $table) {
+        Schema::table('composant_article', function (Blueprint $table) {
             $table
                 ->foreign('id_composant')
                 ->references('id')
@@ -139,7 +138,7 @@ class CreateConstrains extends Migration
                 ->on('article');
         });
 
-        Schema::update('module_article', function (Blueprint $table) {
+        Schema::table('module_article', function (Blueprint $table) {
             $table
                 ->foreign('id_module')
                 ->references('id')

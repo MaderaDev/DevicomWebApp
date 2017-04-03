@@ -15,10 +15,7 @@ class CreateLigneProduitTable extends Migration
     {
         Schema::create('ligne_produit', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->string('nom', 50);
             $table
@@ -31,12 +28,12 @@ class CreateLigneProduitTable extends Migration
                 ->binary('image')
                 ->nullable();
             $table
-                ->integer('id_reference')
+                ->integer('id_gamme')
                 ->unsigned();
 /*            $table
-                ->foreign('id_reference')
+                ->foreign('id_gamme')
                 ->references('id')
-                ->on('reference');*/
+                ->on('gamme');*/
         });
     }
 

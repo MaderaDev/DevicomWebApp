@@ -13,12 +13,9 @@ class CreateFamilleTable extends Migration
      */
     public function up()
     {
-        Schema::table('famille', function (Blueprint $table) {
+        Schema::create('famille', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->string('nom', 50);
         });

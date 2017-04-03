@@ -13,12 +13,9 @@ class CreateModuleArticleTable extends Migration
      */
     public function up()
     {
-        Schema::table('module_article', function (Blueprint $table) {
+        Schema::create('module_article', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('quantite_article')
                 ->default(1);

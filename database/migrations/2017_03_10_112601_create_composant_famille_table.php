@@ -15,10 +15,7 @@ class CreateComposantFamilleTable extends Migration
     {
         Schema::create('composant_famille', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('id_famille')
                 ->unsigned();

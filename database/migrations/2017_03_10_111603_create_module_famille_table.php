@@ -15,10 +15,7 @@ class CreateModuleFamilleTable extends Migration
     {
         Schema::create('module_famille', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('id_famille')
                 ->unsigned();

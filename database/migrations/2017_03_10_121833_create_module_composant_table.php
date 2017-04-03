@@ -13,12 +13,9 @@ class CreateModuleComposantTable extends Migration
      */
     public function up()
     {
-        Schema::table('module_composant', function (Blueprint $table) {
+        Schema::create('module_composant', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('quantite_composant')
                 ->default(1);

@@ -15,10 +15,7 @@ class CreateComposantComposantTable extends Migration
     {
         Schema::create('composant_composant', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('quantite_sous_composant')
                 ->default(1);

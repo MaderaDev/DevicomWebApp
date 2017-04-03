@@ -15,14 +15,9 @@ class CreateModuleTable extends Migration
     {
         Schema::create('module', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->string('nom', 50);
-            $table
-                ->string('reference', 50);
             $table
                 ->float('prix')
                 ->nullable();

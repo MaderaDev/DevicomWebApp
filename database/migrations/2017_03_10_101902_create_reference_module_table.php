@@ -13,12 +13,9 @@ class CreateReferenceModuleTable extends Migration
      */
     public function up()
     {
-        Schema::table('reference_module', function (Blueprint $table) {
+        Schema::create('reference_module', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('id_reference')
                 ->unsigned();

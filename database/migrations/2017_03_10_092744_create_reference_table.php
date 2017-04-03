@@ -15,10 +15,7 @@ class CreateReferenceTable extends Migration
     {
         Schema::create('reference', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->string('nom', 50);
             $table
@@ -30,6 +27,13 @@ class CreateReferenceTable extends Migration
             $table
                 ->binary('image')
                 ->nullable();
+            $table
+                ->integer('id_ligne_produit')
+                ->unsigned();
+/*            $table
+                ->foreign('id_ligne_produit')
+                ->references('id')
+                ->on('ligne_produit');*/
         });
     }
 

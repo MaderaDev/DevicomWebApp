@@ -13,12 +13,9 @@ class CreateComposantArticleTable extends Migration
      */
     public function up()
     {
-        Schema::table('composant_article', function (Blueprint $table) {
+        Schema::create('composant_article', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->integer('quantite_composant')
                 ->default(1);

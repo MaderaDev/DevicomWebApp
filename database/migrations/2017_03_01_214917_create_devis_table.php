@@ -15,11 +15,7 @@ class CreateDevisTable extends Migration
     {
         Schema::create('devis', function (Blueprint $table) {
             $table
-                ->integer('id')
-                ->unsigned()
-                ->primary()
-                ->increment()
-                ->unique();
+                ->increments('id');
             $table
                 ->string('nom', 50);
             $table
@@ -35,10 +31,10 @@ class CreateDevisTable extends Migration
             $table
                 ->integer('id_utilisateur')
                 ->unsigned();
-            $table
+/*            $table
                 ->foreign('id_utilisateur')
                 ->references('id')
-                ->on('users');
+                ->on('users');*/
             $table
                 ->integer('id_client')
                 ->unsigned();
