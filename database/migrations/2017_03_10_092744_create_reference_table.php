@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateReferenceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,26 +13,27 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('reference', function (Blueprint $table) {
             $table
                 ->increments('id');
             $table
                 ->string('nom', 50);
             $table
-                ->string('prenom', 50);
+                ->tinyInteger("status")
+                ->default(0);
             $table
-                ->string('email', 50)
-                ->unique();
-            $table
-                ->string('password', 255);
-            $table
-                ->timestamp('date_creation')
+                ->text('description')
                 ->nullable();
             $table
-                ->enum('role', ['guest','achat', 'commercial', 'admin', 'ingenieur'])
-                ->default('guest');
+                ->binary('image')
+                ->nullable();
             $table
-                ->rememberToken();
+                ->integer('id_ligne_produit')
+                ->unsigned();
+/*            $table
+                ->foreign('id_ligne_produit')
+                ->references('id')
+                ->on('ligne_produit');*/
         });
     }
 
@@ -43,6 +44,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('reference');
     }
 }

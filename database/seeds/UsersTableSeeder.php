@@ -11,27 +11,32 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        //DB::table('users')->delete();
         $default_password = bcrypt('madera');
         $admin =  [
-            'name' => 'Admin',
+            'nom' => 'Admin',
+            'prenom' => 'madera',
             'email' => 'admin@madera.fr',
             'password' => $default_password,
             'role'  => 'admin'
         ];
         $commercial =  [
-            'name' => 'Commercial',
+            'nom' => 'Commercial',
+            'prenom' => 'madera',
             'email' => 'commercial@madera.fr',
             'password' => $default_password,
             'role'  => 'commercial'
         ];
         $achat =  [
-            'name' => 'Achat',
+            'nom' => 'Achat',
+            'prenom' => 'madera',
             'email' => 'achat@madera.fr',
             'password' => $default_password,
             'role'  => 'achat'
         ];
         $ingenieur =  [
-            'name' => 'Ingenieur',
+            'nom' => 'Ingenieur',
+            'prenom' => 'madera',
             'email' => 'ingenieur@madera.fr',
             'password' => $default_password,
             'role'  => 'ingenieur'
