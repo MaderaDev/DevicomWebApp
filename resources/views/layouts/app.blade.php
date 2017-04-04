@@ -36,6 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+                        {{--<img src="img/logo.png" class="img-responsive" alt="Madera logo" width="104" height="36">--}}
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -55,7 +56,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->nom }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
