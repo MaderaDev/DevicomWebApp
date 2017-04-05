@@ -12,3 +12,12 @@ php artisan migrate
 php artisan db:seend #Population de la base de donnée
 ```
 L'application est disponible sur http://localhost:8000
+
+
+## Génération de la documentation 
+
+Cette commande permet de générer une documentation pour API
+```bash
+composer docs 
+```
+La documentation est disponible sur http://localhost:8000/docs/
