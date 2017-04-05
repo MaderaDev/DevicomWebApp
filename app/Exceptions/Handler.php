@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -44,8 +45,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+//        if ( $request->isXmlHttpRequest() ) {
+//            dd('Request XML');
+//            return \Illuminate\Http\Response::json([
+//                'error' => [
+//                    'exception' => class_basename( $e ) . ' in ' . basename( $e->getFile() ) . ' line ' . $e->getLine() . ': ' . $e->getMessage(),
+//                ]
+//            ], 500 );
+//        }
         return parent::render($request, $exception);
     }
+
+
 
     /**
      * Convert an authentication exception into an unauthenticated response.

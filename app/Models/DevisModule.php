@@ -11,6 +11,7 @@ class DevisModule extends Model {
     protected $table = 'devis_module';
     protected $fillable = ['id', 'id_devis', 'id_module'];
 
+    public $timestamps = false;
 
     public function devi() {
         return $this->belongsTo(\App\Models\Devi::class, 'id_devis', 'id');
