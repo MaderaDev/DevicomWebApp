@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Devicom - Madera</title>
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
     <script>
         window.Laravel = {!! json_encode([
@@ -67,8 +67,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
-    <script src="/js/dataTable.js"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
+
 </body>
 </html>
