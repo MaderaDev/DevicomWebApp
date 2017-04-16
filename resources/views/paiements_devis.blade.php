@@ -24,26 +24,13 @@
                                 <tr>
                                     <th>Inscription</th>
                                     <td>
-                                        <?php
-                                            try{
-                                                if(!is_null($data->client->created_at)){
-                                                    echo $data->client->created_at->format('d/m/Y H:i');
-                                                }
-                                            }
-                                            catch(Exception $e){
-                                                //none
-                                            }
-                                        ?>
+                                    {{ $data->client->created_at == NULL ? $data->client->created_at->format('d/m/Y H:i') : 'N/A' }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Edition profil</th>
                                     <td>
-                                        <?php
-/*                                        if(!is_null($data->client->created_at)){
-                                            echo $data->client->updated_at->format('d/m/Y H:i');
-                                        }*/
-                                        ?>
+                                        {{ $data->client->updated_at == NULL ? $data->client->updated_at->format('d/m/Y H:i') : 'N/A' }}
                                     </td>
                                 </tr>
                                 <tr>
