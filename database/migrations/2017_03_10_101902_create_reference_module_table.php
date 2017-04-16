@@ -19,6 +19,10 @@ class CreateReferenceModuleTable extends Migration
             $table
                 ->integer('id_reference')
                 ->unsigned();
+            $table
+                ->integer('quantite_module')
+                ->unsigned()
+                ->default('1');
 /*            $table
                 ->foreign('id_reference')
                 ->references('id')

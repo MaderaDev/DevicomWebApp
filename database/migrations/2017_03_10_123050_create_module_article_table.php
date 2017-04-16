@@ -18,6 +18,7 @@ class CreateModuleArticleTable extends Migration
                 ->increments('id');
             $table
                 ->integer('quantite_article')
+                ->unsigned()
                 ->default(1);
             $table
                 ->integer('id_module')

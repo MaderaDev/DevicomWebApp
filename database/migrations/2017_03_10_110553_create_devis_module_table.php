@@ -17,6 +17,10 @@ class CreateDevisModuleTable extends Migration
             $table
                 ->increments('id');
             $table
+                ->integer('quantite_module')
+                ->unsigned()
+                ->default('1');
+            $table
                 ->integer('id_devis')
                 ->unsigned();
 /*            $table

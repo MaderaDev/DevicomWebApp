@@ -11,6 +11,11 @@ class ClientTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('client')->insert([
+            'nom' => 'Coulonval',
+            'prenom' => 'Benjamin',
+            'email' => 'coulonval.benjamin@gmail.com',
+        ]);
         for ($i = 1; $i <= 15; $i++)
         {
             DB::table('client')->insert([

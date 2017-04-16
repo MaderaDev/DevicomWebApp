@@ -21,10 +21,12 @@ class CreateClientTable extends Migration
             $table
                 ->string('prenom', 50);
             $table
+                ->enum('civilite', ['Madame','Monsieur']);
+            $table
                 ->string('adresse', 50)
                 ->nullable();
             $table
-                ->string('codepostal', 4)
+                ->string('codepostal', 5)
                 ->nullable();
             $table
                 ->string('ville', 50)
@@ -34,6 +36,8 @@ class CreateClientTable extends Migration
             $table
                 ->string('telephone', 50)
                 ->nullable();
+            $table
+                ->timestamps();
         });
     }
 

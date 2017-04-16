@@ -26,8 +26,7 @@ class CreateUsersTable extends Migration
             $table
                 ->string('password', 255);
             $table
-                ->timestamp('date_creation')
-                ->nullable();
+                ->timestamps();
             $table
                 ->enum('role', ['guest','achat', 'commercial', 'admin', 'ingenieur'])
                 ->default('guest');
