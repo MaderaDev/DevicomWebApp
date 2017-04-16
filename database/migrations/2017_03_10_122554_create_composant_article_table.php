@@ -18,6 +18,7 @@ class CreateComposantArticleTable extends Migration
                 ->increments('id');
             $table
                 ->integer('quantite_composant')
+                ->unsigned()
                 ->default(1);
             $table
                 ->integer('id_composant')

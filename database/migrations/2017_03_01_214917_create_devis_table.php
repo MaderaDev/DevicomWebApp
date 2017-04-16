@@ -20,14 +20,18 @@ class CreateDevisTable extends Migration
                 ->string('nom', 50);
             $table
                 ->float('montant')
-                ->nullable();
+                ->default(0,0);
             $table
-                ->datetime('date_creation');
+                ->float('solde')
+                ->default(0,0);
             $table
-                ->datetime('date_modification');
+                ->timestamps();
             $table
-                ->enum('status', ['Brouillon','En attente', 'Refusé', 'Accepté', 'En commande', 'En faturation', 'Clôturé'])
+                ->enum('status', ['Brouillon','En attente', 'Refusé', 'Accepté', 'En commande', 'En facturation', 'Clôturé'])
                 ->default('Brouillon');
+            $table
+                ->enum('etape', ['Devis_ouvert', 'Signature_devis', 'Permis_construire', 'Ouverture_chantier', 'Achevement_fondation', 'Achevement_mur', 'Achevement_etanche', 'Travaux_equipement', 'Remise_cle'])
+                ->default('Devis_ouvert');
             $table
                 ->integer('id_utilisateur')
                 ->unsigned();

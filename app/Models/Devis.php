@@ -16,6 +16,10 @@ class Devis extends Model {
         return $this->belongsTo(\App\Models\Client::class, 'id_client', 'id');
     }
 
+    public function users() {
+        return $this->belongsTo(\App\Models\User::class, 'id_utilisateur', 'id');
+    }
+
     public function modules() {
         return $this->belongsToMany(\App\Models\Module::class, 'devis_module', 'id_devis', 'id_module');
     }
