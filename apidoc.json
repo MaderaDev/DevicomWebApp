@@ -1,0 +1,10 @@
+{
+  "name": "Devicom",
+  "version": "0.1.0",
+  "description": "Devicom documentation API Tablette",
+  "title": "Madera Devicom",
+  "url" : "http://localhost:8000/api",
+  "template" : {
+    "forceLanguage" : "fr"
+  }
+}

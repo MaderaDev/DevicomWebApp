@@ -11,7 +11,7 @@ class Client extends Model {
     protected $table = 'client';
     protected $fillable = ['id', 'nom', 'prenom', 'adresse', 'codepostal', 'ville', 'email', 'telephone'];
 
-
+    public $timestamps = false;
     public function devis() {
         return $this->hasMany(\App\Models\Devi::class, 'id_client', 'id');
     }
