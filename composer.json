@@ -53,7 +53,7 @@
       "php artisan optimize"
     ],
     "docs" : [
-      "apidoc -i app/Http/Controllers -o public/docs/"
+      "npm run docs"
     ]
   },
   "config": {
