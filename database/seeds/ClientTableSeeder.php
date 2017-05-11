@@ -15,6 +15,7 @@ class ClientTableSeeder extends Seeder
             'nom' => 'Coulonval',
             'prenom' => 'Benjamin',
             'email' => 'coulonval.benjamin@gmail.com',
+            'civilite' => 'Monsieur'
         ]);
         for ($i = 1; $i <= 15; $i++)
         {
@@ -22,6 +23,7 @@ class ClientTableSeeder extends Seeder
                 'nom' => str_random(10),
                 'prenom' => str_random(10),
                 'email' => str_random(10).'@gmail.com',
+                'civilite' => 'Monsieur'
             ]);
         }
     }
