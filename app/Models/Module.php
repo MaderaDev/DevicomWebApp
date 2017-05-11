@@ -10,7 +10,7 @@ class Module extends Model {
 
     protected $table = 'module';
     protected $fillable = ['id', 'nom', 'prix', 'status', 'description', 'image'];
-
+    public $timestamps = false;
 
     public function devis() {
         return $this->belongsToMany(\App\Models\Devi::class, 'devis_module', 'id_module', 'id_devis');

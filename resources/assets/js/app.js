@@ -45,4 +45,12 @@ $(document).ready( function () {
             }
         }
     });
+
+
+    $('.tagsMultiSelect').select2({
+        tags: true,
+        tokenSeparators: [',', ' ']
+    })
+
 } );
+

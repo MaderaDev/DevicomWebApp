@@ -11,6 +11,7 @@ class Article extends Model {
     protected $table = 'article';
     protected $fillable = ['id', 'nom', 'fournisseur', 'reference', 'prix', 'status', 'description', 'image'];
 
+    public $timestamps = false;
 
     public function composants() {
         return $this->belongsToMany(\App\Models\Composant::class, 'composant_article', 'id_article', 'id_composant');
@@ -28,5 +29,9 @@ class Article extends Model {
         return $this->hasMany(\App\Models\ModuleArticle::class, 'id_article', 'id');
     }
 
+    public function setUpdatedAtAttribute($value)
+    {
+
+    }
 
 }

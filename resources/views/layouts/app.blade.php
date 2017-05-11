@@ -8,6 +8,7 @@
     <title>Devicom - Madera</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
@@ -35,7 +36,24 @@
                     <ul class="nav navbar-nav">
                        <li><a href="/paiements">Gestion des devis</a></li>
                        <li><a href="/gammes">Gestion des gammes</a></li>
-                       <li><a href="#">Gestion des modules</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Conception modules <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('modules') }}">
+                                        <i class="glyphicon glyphicon-th-list"></i> Liste des modules
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('modules.create') }}">
+                                        <i class="glyphicon glyphicon-plus"></i> Crée un module
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -63,11 +81,14 @@
             </div>
         </nav>
 
+        @include('flash::message')
+
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ mix('/js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 </body>
 </html>

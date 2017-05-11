@@ -10,7 +10,7 @@ class ModuleArticle extends Model {
 
     protected $table = 'module_article';
     protected $fillable = ['id', 'quantite_article', 'id_module', 'id_article'];
-
+    public $timestamps = false;
 
     public function article() {
         return $this->belongsTo(\App\Models\Article::class, 'id_article', 'id');
