@@ -164,6 +164,30 @@ class ApiController extends Controller
     }
 
     /**
+     * @api {get} /devis Liste de tous les devis
+     * @apiGroup Devis
+     *
+     * @apiDescription Récupéré la liste de tout les devis
+     * @apiSuccess (Success 200) {Object}  devis Liste des devis
+     *
+     * @apiParam {String} nom       Intitule du devis
+     * @apiParam {Number} montant   Montant du devis
+     * @apiParam {String} id_utilisateur   Id du commercial
+     * @apiParam {String} id_client   Id du client
+     * @apiParam {String} status    Status du devis : 'Brouillon','En attente','Refusé','Accepté','En commande','En faturation','Clôturé'
+     * @apiParam {String} etape     Etape du devis : 'Devis_ouvert','Signature_devis','Permis_construire','Ouverture_chantier','Achevement_fondation','Achevement_mur','Achevement_etanche','Travaux_equipement','Remise_cle'
+     * @apiParam {Object} modules   ID des modules séparer par un ";"
+     * @apiError (Error 500) {Object}  message Message erreur
+     *
+     */
+    public function DevisList(Request $request)
+    {
+
+        return response()->json(Devis::all());
+
+    }
+
+    /**
      * @api {post} /auth Login
      * @apiName Login
      * @apiGroup Auth
