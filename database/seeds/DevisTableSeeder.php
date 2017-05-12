@@ -26,8 +26,17 @@ class DevisTableSeeder extends Seeder
                 'updated_at' => \Carbon\Carbon::now(),
             ]);
 
+            $modules = \App\Models\Module::inRandomOrder()
+                ->limit($faker->numberBetween(10,50))
+                ->get();
 
-
+            foreach($modules as $module) {
+                DB::table('devis_module')->insert([
+                    'quantite_module' => 1,
+                    'id_devis' => $id,
+                    'id_module' => $module->id,
+                ]);
+            }
         }
 
     }
