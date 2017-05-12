@@ -11,11 +11,27 @@ class ModuleTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 30; $i++)
-        {
-            DB::table('module')->insert([
-                'nom' => 'Module'.$i
+        $faker = Faker\Factory::create('fr_FR');
+
+        foreach(range(1, 500) as $key => $index) {
+            $moduleID = DB::table('module')->insertGetId([
+                'nom' => 'Module n°'. $key,
+                'prix' => $faker->randomFloat(2,100, 10000),
+                'description' => 'Module#'.$key .' référence #'.$key
             ]);
+
+            // Module Composant Article
+            $articles = \App\Models\Article::inRandomOrder()
+                ->limit($faker->numberBetween(10,100))
+                ->get();
+
+            foreach ($articles as $article) {
+                DB::table('module_article')->insert([
+                    'quantite_article' => 1,
+                    'id_module'	 => $moduleID,
+                    'id_article' => $article->id
+                ]);
+            }
         }
     }
 }

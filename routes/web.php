@@ -4,6 +4,7 @@
 Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
     Route::get('gammes', 'GammesController@show');
     Route::get('modules', 'ModuleController@index')->name('modules');
     Route::get('modules/create', 'ModuleController@create')->name('modules.create');

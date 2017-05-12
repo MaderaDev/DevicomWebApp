@@ -13,14 +13,22 @@ class DevisTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 10; $i++)
-        {
-            DB::table('devis')->insert([
-                'nom' => 'Devis'.$i,
-                'montant' => $i,
+        $faker = Faker\Factory::create('fr_FR');
+
+
+        foreach (range(1,50) as  $key => $index) {
+            $id = DB::table('devis')->insertGetId([
+                'nom' => 'Devis n°'.$key,
+                'montant' => $faker->randomFloat(2,40000, 250000),
                 'id_utilisateur' => User::where('nom', 'Admin')->first()->id,
-                'id_client' => Client::where('nom', 'Coulonval')->first()->id
+                'id_client' => Client::inRandomOrder()->get()->first()->id,
+                'created_at' =>  \Carbon\Carbon::now(),
+                'updated_at' => \Carbon\Carbon::now(),
             ]);
+
+
+
         }
+
     }
 }
