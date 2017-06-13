@@ -9,7 +9,7 @@ class Client extends Model {
      */
 
     protected $table = 'client';
-    protected $fillable = ['id', 'nom', 'prenom', 'adresse', 'codepostal', 'ville', 'email', 'telephone'];
+    protected $fillable = ['id', 'civilite', 'nom', 'prenom', 'adresse', 'codepostal', 'ville', 'email', 'telephone'];
 
     public $timestamps = false;
     public function devis() {

@@ -21,6 +21,7 @@ class ReferenceModuleTableSeeder extends Seeder
                     'id_module' => Module::Where('nom', 'like', '%'.$i)->first()->id
                 ]);
             }
+
         }
     }
 }

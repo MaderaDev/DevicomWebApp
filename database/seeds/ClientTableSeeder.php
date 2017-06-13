@@ -34,6 +34,7 @@ class ClientTableSeeder extends Seeder
                 $civilite = 'Monsieur';
             else
                 $civilite = 'Madame';
+
             DB::table('client')->insert([
                 'civilite' => $civilite,
                 'nom' => $faker->name($gender),
@@ -45,7 +46,7 @@ class ClientTableSeeder extends Seeder
                 'telephone' => $faker->phoneNumber,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),
-            ]);
+            ]);App\Models\Client::all();
         }
     }
 }
