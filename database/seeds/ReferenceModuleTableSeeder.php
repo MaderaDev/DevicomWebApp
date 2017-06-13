@@ -15,10 +15,12 @@ class ReferenceModuleTableSeeder extends Seeder
     {
         for ($i = 1; $i <= 20; $i++)
         {
-            DB::table('reference_module')->insert([
-                'id_reference' => Reference::find(3)->id,
-                'id_module' => Module::Where('nom', 'like', '%'.$i)->first()->id
-            ]);App/Models/Reference::find(3);
+            if(Module::Where('nom', 'like', '%'.$i)->first() != null) {
+                DB::table('reference_module')->insert([
+                    'id_reference' => Reference::find(3)->id,
+                    'id_module' => Module::Where('nom', 'like', '%'.$i)->first()->id
+                ]);
+            }
         }
     }
 }
