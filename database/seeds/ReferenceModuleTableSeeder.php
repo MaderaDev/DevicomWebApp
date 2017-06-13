@@ -16,7 +16,7 @@ class ReferenceModuleTableSeeder extends Seeder
         for ($i = 1; $i <= 20; $i++)
         {
             DB::table('reference_module')->insert([
-                'id_reference' => Reference::where('nom', 'StudioPack™')->first()->id,
+                'id_reference' => Reference::find(3)->id,
                 'id_module' => Module::Where('nom', 'Module'.$i)->first()->id
             ]);
         }
