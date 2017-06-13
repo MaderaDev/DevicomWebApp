@@ -15,9 +15,9 @@ class ReferenceModuleTableSeeder extends Seeder
     {
         for ($i = 1; $i <= 20; $i++)
         {
-            if(Module::Where('nom', 'like', '%'.$i)->first() != null) {
+            if(Module::Where('nom', 'like', '%'.$i)->first() != null or Reference::Where('nom', 'like', '%'.$i) != null) {
                 DB::table('reference_module')->insert([
-                    'id_reference' => Reference::find(3)->id,
+                    'id_reference' => Reference::Where('nom', 'like', '%'.$i)->first()->id,
                     'id_module' => Module::Where('nom', 'like', '%'.$i)->first()->id
                 ]);
             }
