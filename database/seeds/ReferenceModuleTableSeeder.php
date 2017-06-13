@@ -17,7 +17,7 @@ class ReferenceModuleTableSeeder extends Seeder
         {
             DB::table('reference_module')->insert([
                 'id_reference' => Reference::find(3)->id,
-                'id_module' => Module::Where('nom', 'Module n°'.$i)->first()->id
+                'id_module' => Module::Where('nom', 'like', '%'.$i)->first()->id
             ]);App/Models/Reference::find(3);
         }
     }
