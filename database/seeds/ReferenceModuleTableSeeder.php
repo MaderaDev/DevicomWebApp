@@ -13,7 +13,7 @@ class ReferenceModuleTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 30; $i++)
+        for ($i = 1; $i <= 20; $i++)
         {
             DB::table('reference_module')->insert([
                 'id_reference' => Reference::where('nom', 'StudioPack™')->first()->id,

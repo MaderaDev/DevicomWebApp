@@ -84,15 +84,7 @@ class ApiController extends Controller
      *
      *
      * @apiParam {Number} id     ID du client
-     * @apiParam {String} civilite  Sexe du client
-     * @apiParam {String} nom     Nom du client
-     * @apiParam {String} nom     Nom du client
-     * @apiParam {String} prenom  Prénom du client
-     * @apiParam {String} adresse Adresse du client
-     * @apiParam {Number} codepostal  Code Postal
-     * @apiParam {String} ville     Ville
-     * @apiParam {String} email     Adresse email
-     * @apiParam {String} telephone Téléphone
+     * @apiParam {String} c
      * @apiParam {String} created_at Date de création
      * @apiParam {String} created_at Date de derniere modification
      *

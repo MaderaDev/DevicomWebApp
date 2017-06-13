@@ -13,7 +13,7 @@ class ArticleTableSeeder extends Seeder
     {
 
         $faker = Faker\Factory::create();
-        foreach (range(1,500) as  $key => $index) {
+        foreach (range(1,100) as  $key => $index) {
             DB::table('article')->insert([
                 'nom' => 'Article '. $key,
                 'fournisseur' => $faker->company,

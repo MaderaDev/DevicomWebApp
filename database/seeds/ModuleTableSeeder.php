@@ -13,7 +13,7 @@ class ModuleTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        foreach(range(1, 500) as $key => $index) {
+        foreach(range(1, 100) as $key => $index) {
             $moduleID = DB::table('module')->insertGetId([
                 'nom' => 'Module n°'. $key,
                 'prix' => $faker->randomFloat(2,100, 10000),
