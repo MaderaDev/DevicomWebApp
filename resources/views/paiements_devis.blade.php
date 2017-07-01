@@ -30,7 +30,7 @@
                                 <tr>
                                     <th>Edition profil</th>
                                     <td>
-                                        {{ is_null($data->client->updated_at) ? 'N/A' ? $data->client->updated_at->format('d/m/Y H:i') }}
+                                        {{ is_null($data->client->updated_at) ? 'N/A' : $data->client->updated_at->format('d/m/Y H:i') }}
                                     </td>
                                 </tr>
                                 <tr>
