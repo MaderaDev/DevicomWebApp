@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Gestion des gammes</div>
                 <div class="panel-body">
-                    <h2>Liste des gammes</h2>
+                    <h2>Gammes</h2>
                     <table class="table table-striped table-bordered crud" cellspacing="0" width="100%">
                         <thead>
                         <tr>
