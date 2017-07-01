@@ -12,8 +12,11 @@
 
                     <a class="btn btn-primary pull-right" href="{{ route('modules.create') }}" role="button">
                         <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"> </span>
-                        Crée un module
+                        Créer un module
                     </a>
+
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
 
                     <table class="table table-striped table-bordered crud" cellspacing="0" width="100%">
                         <thead>

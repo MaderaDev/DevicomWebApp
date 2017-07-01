@@ -73,21 +73,14 @@
                                 <tr>
                                     <th>Date de création</th>
                                     <td>
-                                        <?php
-/*                                        if(!is_null($data->client->created_at)){
-                                            echo $data->created_at->format('d/m/Y H:i');
-                                        }*/
+                                        {{ is_null($item->created_at) ? 'N/A' : $item->created_at->format('d/m/Y H:i')  }}
                                         ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Date de modification</th>
                                     <td>
-                                        <?php
-/*                                        if(!is_null($data->client->created_at)){
-                                            echo $data->updated_at->format('d/m/Y H:i');
-                                        }*/
-                                        ?>
+                                        {{ is_null($item->updated_at) ? 'N/A' : $item->updated_at->format('d/m/Y H:i')  }}
                                     </td>
                                 </tr>
                                 <tr>

@@ -14,7 +14,7 @@
                                 <th>Montant total</th>
                                 <th>Date de creation</th>
                                 <th>Date de modification</th>
-                                <th>Status</th>
+                                <th>Statut</th>
                                 <th>Client</th>
                                 <th>Actions</th>
                             </tr>
@@ -24,8 +24,8 @@
                             <tr>
                             <td>{{ $item->nom }}</td>
                             <td>{{ $item->montant }}</td>
-                            <td>{{ $item->date_creation }}</td>
-                            <td>{{ $item->date_modification }}</td>
+                            <td>{{ is_null($item->created_at) ? 'N/A' : $item->created_at->format('d/m/Y H:i')  }}</td>
+                            <td>{{ is_null($item->updated_at) ? 'N/A' : $item->updated_at->format('d/m/Y H:i')  }}</td>
                             <td>{{ $item->status }}</td>
                             <td>{{ $item->client->prenom." ".$item->client->nom }}</td>
                             <td style="text-align: center">

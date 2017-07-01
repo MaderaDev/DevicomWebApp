@@ -24,7 +24,7 @@
                             <a href="/paiements" class="thumbnail">
                                 <img src="img/paiements.jpg" alt="Paiements" class="img-responsive">
                             </a>
-                            <h2>Paiements</h2>
+                            <h2>Devis</h2>
                         </div>
                     </div>
                 </div>

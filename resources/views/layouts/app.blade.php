@@ -54,10 +54,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="/gammes">Gestion des gammes</a></li>
+                    <li><a href="/gammes">Gammes</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Conception modules <span class="caret"></span>
+                            Modules <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
@@ -68,7 +68,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('modules.create') }}">
-                                    <i class="glyphicon glyphicon-plus"></i> Crée un module
+                                    <i class="glyphicon glyphicon-plus"></i> Créer un module
                                 </a>
                             </li>
                         </ul>
