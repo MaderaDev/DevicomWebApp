@@ -36,24 +36,6 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Devis <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ route('client') }}">
-                                    <i class="glyphicon glyphicon-th-list"></i> Liste des clients
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('paiements') }}">
-                                    <i class="glyphicon glyphicon-th-list"></i> Gestion des devis
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li><a href="/gammes">Gammes</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -69,6 +51,24 @@
                             <li>
                                 <a href="{{ route('modules.create') }}">
                                     <i class="glyphicon glyphicon-plus"></i> Créer un module
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Devis <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('client') }}">
+                                    <i class="glyphicon glyphicon-th-list"></i> Liste des clients
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('paiements') }}">
+                                    <i class="glyphicon glyphicon-th-list"></i> Gestion des devis
                                 </a>
                             </li>
                         </ul>
