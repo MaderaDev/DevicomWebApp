@@ -240,8 +240,8 @@
                                     <td>{{ $item->module->prix."€" }}</td>
                                     <td>{{ $item->module->description }}</td>
                                     <td style="text-align: center">
-                                        <a href="">
-                                            <button type="button" class="btn btn-primary btn-xs">Afficher</button>
+                                        <a href="{{ route('modules.edit', ['id' => $item->module->id]) }}">
+                                            <button type="button" class="btn btn-primary btn-xs">Editer</button>
                                         </a>
                                     </td>
                             @endforeach

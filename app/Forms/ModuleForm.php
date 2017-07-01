@@ -37,7 +37,7 @@ class ModuleForm extends Form
                         return array_pluck($articles, 'id');
                 }
             ])
-            ->add('status', 'select', [
+            ->add('statut', 'select', [
                 'choices' => [0 => 'Désactivé', 1 => 'Activé'],
                 'selected' => 1,
                 'rules' => 'required'
