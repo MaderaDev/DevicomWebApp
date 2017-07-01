@@ -24,13 +24,13 @@
                                 <tr>
                                     <th>Inscription</th>
                                     <td>
-                                    {{ $data->client->created_at == NULL ? $data->client->created_at->format('d/m/Y H:i') : 'N/A' }}
+                                    {{ is_null($data->client->created_at)  ? 'N/A' :  $data->client->created_at->format('d/m/Y H:i') }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Edition profil</th>
                                     <td>
-                                        {{ $data->client->updated_at == NULL ? $data->client->updated_at->format('d/m/Y H:i') : 'N/A' }}
+                                        {{ is_null($data->client->updated_at)  : 'N/A' ? $data->client->updated_at->format('d/m/Y H:i') }}
                                     </td>
                                 </tr>
                                 <tr>
@@ -74,7 +74,6 @@
                                     <th>Date de création</th>
                                     <td>
                                         {{ is_null($data->created_at) ? 'N/A' : $data->created_at->format('d/m/Y H:i')  }}
-                                        ?>
                                     </td>
                                 </tr>
                                 <tr>
