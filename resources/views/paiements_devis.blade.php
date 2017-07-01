@@ -73,14 +73,14 @@
                                 <tr>
                                     <th>Date de création</th>
                                     <td>
-                                        {{ is_null($item->created_at) ? 'N/A' : $item->created_at->format('d/m/Y H:i')  }}
+                                        {{ is_null($data->created_at) ? 'N/A' : $data->created_at->format('d/m/Y H:i')  }}
                                         ?>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Date de modification</th>
                                     <td>
-                                        {{ is_null($item->updated_at) ? 'N/A' : $item->updated_at->format('d/m/Y H:i')  }}
+                                        {{ is_null($data->updated_at) ? 'N/A' : $data->updated_at->format('d/m/Y H:i')  }}
                                     </td>
                                 </tr>
                                 <tr>
