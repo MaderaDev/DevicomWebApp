@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -227,9 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
-
-
-
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

@@ -82,10 +82,41 @@
                 text-align:center;
             }
         }
+
+        @media print {
+            @page {
+                size: auto;   /* auto is the initial value */
+                margin: 0;  /* this affects the margin in the printer settings */
+            }
+            .btnprint {
+                display: none;
+            }
+            .invoice-box{
+                max-width: 100%;
+                border:none;
+                box-shadow: none;
+            }
+
+        }
+
+
     </style>
+
+    <script>
+        function myprint() {
+            window.print();
+        }
+    </script>
+
 </head>
 
 <body>
+
+<div style="text-align:center;margin-bottom:30px" class="btnprint">
+    <button onclick="myprint()">Imprimer ce devis</button>
+
+</div>
+
 <div class="invoice-box">
     <table cellpadding="0" cellspacing="0">
         <tr class="top">
@@ -93,7 +124,7 @@
                 <table>
                     <tr>
                         <td class="title">
-                            <img width="200px" src="{{ asset('img/logo.png') }}" alt="">
+                            <img width="200px" src="{{asset('img/logo.png')}}" alt="">
                         </td>
 
                         <td>
@@ -156,11 +187,6 @@
             <td>
                 Montant total: {{number_format($data->montant, 2, ',', ' ')." €"}}
             </td>
-        </tr>
-
-
-
-
         </tr>
     </table>
 </div>

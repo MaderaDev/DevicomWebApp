@@ -9,11 +9,13 @@
   "type": "project",
   "require": {
     "php": ">=5.6.4",
+    "barryvdh/laravel-dompdf": "^0.8.0",
     "kris/laravel-form-builder": "^1.11",
     "laracasts/flash": "^3.0",
     "laravel/framework": "5.4.*",
     "laravel/tinker": "~1.0",
-    "mpociot/laravel-apidoc-generator": "^2.0"
+    "mpociot/laravel-apidoc-generator": "^2.0",
+    "spipu/html2pdf": "^5.0"
   },
   "require-dev": {
     "barryvdh/laravel-ide-helper": "^2.3",

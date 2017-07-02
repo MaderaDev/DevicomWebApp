@@ -6,7 +6,7 @@ use App\Models\Devis;
 use App\Models\Modules;
 use App\Models\DevisModule;
 use Illuminate\Http\Request;
-
+use PDF;
 class PaiementsController extends Controller
 {
     public function show()
@@ -163,10 +163,16 @@ class PaiementsController extends Controller
     {
         $data = Devis::findOrFail($id);
         $modules = DevisModule::where('id_devis', '=', $id)->get();
-        $etapeDevis = $this->getEtapeDevis($data->etape);
-        $montantAttendu = $this->getMontantAttendu($data->etape, $data->montant);
-        $pourcentageAttendu = $this->getPourcentageAttendu($data->etape);
+//        $etapeDevis = $this->getEtapeDevis($data->etape);
+//        $montantAttendu = $this->getMontantAttendu($data->etape, $data->montant);
+//        $pourcentageAttendu = $this->getPourcentageAttendu($data->etape);
 
+        //$pdf = PDF::loadView('facture', compact('data', 'modules'));
+
+        //$pdf->stream();
+        //$pdf->setWarnings(false);
+        //return $pdf->stream('invoice.pdf');
+        //return $pdf->download('invoice.pdf');
 
         return view('facture', compact('data', 'modules', 'etapeDevis', 'montantAttendu', 'pourcentageAttendu'));
     }

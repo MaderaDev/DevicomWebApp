@@ -121,9 +121,9 @@
                                     @endif
                                 </tr>
                                 <tr>
-                                    <th>Télécharger</th>
+                                    <th>Exporter</th>
                                     <td>
-                                        <a href="{{ route('pdf', ['id' => $data->id]) }}" class="btn btn-primary">Télécharger en PDF</a>
+                                        <a target="_blank" href="{{ route('pdf', ['id' => $data->id]) }}" class="btn btn-primary">Exporter le devis</a>
                                     </td>
                                 </tr>
                                 </tbody>
