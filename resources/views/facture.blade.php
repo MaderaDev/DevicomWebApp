@@ -93,7 +93,7 @@
                 <table>
                     <tr>
                         <td class="title">
-                            <h1 style="color:red">Madera</h1>
+                            <img width="200px" src="{{ asset('img/logo.png') }}" alt="">
                         </td>
 
                         <td>
@@ -119,7 +119,8 @@
 
                         <td>
                             Madera - Création de maison modulaire<br>
-                            commercial@madera.fr
+                            {{$data->users->nom}} {{$data->users->prenom}}<br>
+                            {{$data->users->email}}
                         </td>
                     </tr>
                 </table>
@@ -156,21 +157,9 @@
                 Montant total: {{number_format($data->montant, 2, ',', ' ')." €"}}
             </td>
         </tr>
-        <tr class="total">
-            <td></td>
-            <td>Versé <versé></versé> : {{number_format($data->solde, 2, ',', ' ')." €"}}</td>
-        </tr>
 
-        <tr class="total">
 
-        <tr>
-            <td>Restant à payer</td>
-            @if($montantAttendu - $data->solde == 0)
-                <td style="color: green;font-weight:bold">{{number_format($montantAttendu-$data->solde, 2, ',', ' ')." €"}}</td>
-            @else
-                <td style="color: red;font-weight:bold">{{number_format($montantAttendu-$data->solde, 2, ',', ' ')." €"}}</td>
-            @endif
-        </tr>
+
 
         </tr>
     </table>
