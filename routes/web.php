@@ -14,5 +14,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('modules/storeEdit', 'ModuleController@storeEdit')->name('modules.storeEdit');
     Route::get('paiements', 'PaiementsController@show');
     Route::get('paiements/devis/{id}', 'PaiementsController@devis')->name('devis');
+    Route::get('paiements/devis/export/{id}', 'PaiementsController@pdf')->name('pdf');
+
     Route::post('paiements/devis/{id}/apply', 'PaiementsController@applyDevis')->name('applyDevis');
 });

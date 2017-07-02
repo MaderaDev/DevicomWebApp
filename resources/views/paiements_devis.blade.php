@@ -120,6 +120,12 @@
                                         <td style="color: red;font-weight:bold">{{number_format($montantAttendu-$data->solde, 2, ',', ' ')." €"}}</td>
                                     @endif
                                 </tr>
+                                <tr>
+                                    <th>Télécharger</th>
+                                    <td>
+                                        <a href="{{ route('pdf', ['id' => $data->id]) }}" class="btn btn-primary">Télécharger en PDF</a>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

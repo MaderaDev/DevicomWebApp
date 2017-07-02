@@ -158,4 +158,16 @@ class PaiementsController extends Controller
         }
         return redirect(route('devis', ['id' => $data->id]));
     }
+
+    public function pdf($id)
+    {
+        $data = Devis::findOrFail($id);
+        $modules = DevisModule::where('id_devis', '=', $id)->get();
+        $etapeDevis = $this->getEtapeDevis($data->etape);
+        $montantAttendu = $this->getMontantAttendu($data->etape, $data->montant);
+        $pourcentageAttendu = $this->getPourcentageAttendu($data->etape);
+
+
+        return view('facture', compact('data', 'modules', 'etapeDevis', 'montantAttendu', 'pourcentageAttendu'));
+    }
 }
