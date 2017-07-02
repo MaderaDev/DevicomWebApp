@@ -129,7 +129,7 @@
 
                         <td>
                             Devis #: {{$data->id}}<br>
-                            Crée le :  {{ is_null($data->client->created_at)  ? 'N/A' :  $data->client->created_at->format('d/m/Y H:i') }}<br>
+                            Créé le :  {{ is_null($data->client->created_at)  ? 'N/A' :  $data->client->created_at->format('d/m/Y H:i') }}<br>
                             Modifié le : {{ is_null($data->client->updated_at) ? 'N/A' : $data->client->updated_at->format('d/m/Y H:i') }}
                         </td>
                     </tr>
